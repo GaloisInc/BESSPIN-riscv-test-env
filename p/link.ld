@@ -4,13 +4,13 @@ ENTRY(_start)
 SECTIONS
 {
   . = 0x80000000;
-  .text.init : { *(.text.init) }
+  .text.init : { *(.text.init); . = ALIGN(0x1000); } = 0xaa
   . = ALIGN(0x1000);
-  .tohost : { *(.tohost) }
+  .tohost : { *(.tohost); . = ALIGN(0x1000); } = 0xaa
   . = ALIGN(0x1000);
-  .text : { *(.text) }
+  .text : { *(.text); . = ALIGN(0x1000); } = 0xaa
   . = ALIGN(0x1000);
-  .data : { *(.data) }
+  .data : { *(.data); . = ALIGN(0x1000); } = 0xaa
   . = ALIGN(8);
   _bss_begin = .;
   .bss : { *(.bss) }
