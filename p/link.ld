@@ -3,8 +3,6 @@ ENTRY(_start)
 
 SECTIONS
 {
-  . = 0x6FFF0000;
-  .reset_reg : { *(.reset_reg); . = ALIGN(0x1000); } = 0xaa
   . = 0xC0000000;
   .text.init : { *(.text.init); . = ALIGN(0x1000); } = 0xaa
   . = ALIGN(0x1000);
